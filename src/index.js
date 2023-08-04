@@ -1,12 +1,7 @@
 
-<<<<<<< HEAD
-import "../assets/css/main.css";
-import "../assets/css/menu.css";
-=======
 import "./styles/main.css";
 import "./styles/menu.css";
 
->>>>>>> gh-pages
 import { displayimage, menuimages } from "./displayimage";
 
 window.addEventListener('load', ()=> {
