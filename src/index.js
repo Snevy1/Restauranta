@@ -1,4 +1,6 @@
 
+import "../assets/css/main.css";
+import "../assets/css/menu.css";
 
 import { displayimage, menuimages } from "./displayimage";
 
