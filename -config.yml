@@ -1,0 +1,21 @@
+lang: en-US
+title: My best Site
+email:
+description: A wonderful website
+author: Nevily
+twitter_username: Nevy
+github_username: Simiyu
+
+# Build settings
+markdown: kramdown
+theme: leap-day
+
+
+
+
+
+
+
+
+
+
