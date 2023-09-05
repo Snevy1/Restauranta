@@ -47,6 +47,10 @@ module.exports = merge(common,{
 
             {
                 test: /\.css$/i,
+                include: [
+   path.resolve(__dirname, './src/index.css'),
+   path.resolve(__dirname, './src/style.css'),
+],
                 use: [
                     MiniCssExtractPlugin.loader,
                      //extract css into files

@@ -10,6 +10,8 @@ import foods from "./assets/images1/foods.jpg";
 import foods2 from "./assets/images1/foods2.jpg";
 import foods3 from "./assets/images1/foods3.jpg";
 import foods4 from "./assets/images1/foods4.jpg";
+import "./index.css";
+import "./style.css";
 
 export const displayimage = ()=>{
 

@@ -1,5 +1,5 @@
 
-import "./index.css";
+import "./index.css"
 import "./style.css";
 
 import { displayimage, menuimages } from "./displayimage";
