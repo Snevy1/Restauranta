@@ -48,8 +48,8 @@ module.exports = merge(common,{
             {
                 test: /\.css$/i,
                 include: [
-   path.resolve(__dirname, './src/main.css'),
-   path.resolve(__dirname, './src/style.css'),
+   path.resolve(__dirname, 'src/styles/main.css'),
+   path.resolve(__dirname, 'src/styles/menu.css'),
 ],
                 use: [
                     MiniCssExtractPlugin.loader,
