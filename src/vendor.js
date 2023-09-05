@@ -1,2 +1,2 @@
-import("./styles/main.css");
-import("./styles/menu.css");
+import "./index.css";
+import "./style.css";
