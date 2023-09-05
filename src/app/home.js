@@ -5,6 +5,8 @@ import { cards } from "../displayimage";
 import { featuredProducts } from "./featuredproducts";
 import { restmenu } from "./menu";
 import { swiper } from "./swiper1";
+import "../index.css";
+import "../style.css";
 
 
 
