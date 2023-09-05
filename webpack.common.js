@@ -3,10 +3,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-   entry: {
-      main: "./src/index.js",
-      vendor: "./src/vendor.js",
-   },
+   entry: [
+       "./src/index.js",
+       "./src/index.css"
+   ],
 
    module: {
       rules: [
