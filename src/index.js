@@ -1,6 +1,6 @@
 
 import "./index.css"
-import "./styles/menu.css";
+import "./style.css";
 
 import { displayimage, menuimages } from "./displayimage";
 
