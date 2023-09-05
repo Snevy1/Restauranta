@@ -1,1 +1,123 @@
+.mainmenu{
+   background-color: #cac6c6;
+   margin: 2rem 0;
+   padding: 1rem;
+   border-top:1px solid black;
+ }
 
+.mainmenu h1{
+   text-align: center;
+   margin-bottom: 1rem;
+   color: #152F63;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainmenu p{
+   margin-bottom: 2rem;
+}
+
+
+ .menuimages{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap:15px;
+ }
+
+ .menuimages div h1{
+   text-align: center;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   color: #88776B;
+   font-size: larger;
+   font-weight: 400;
+
+ }
+
+ .navigation{
+   background-color:hsl(0, 0%, 100%);
+ }
+
+ .navigation ul {
+   list-style-type: none;
+   justify-content: center;
+   display: flex;
+
+ }
+
+ .navigation ul li{
+   margin-right: 1rem;
+ }
+
+.navigation ul li a{
+   text-decoration: none;
+   font-weight: 600;
+   font-size: larger;
+}
+
+.images{
+   border:1px solid #EFEFEF;
+   border-radius: 15px;
+}
+
+
+.meals{
+   color:black
+}
+
+.breakfastmeals{
+
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap:25px;
+   /* background-color: #ffff; */
+   padding: 5px;
+   
+}
+
+.breakfastimg{
+   max-width: 100%;
+   height: auto;
+}
+
+.breakdiv{
+   border:1px solid #ffff;
+   padding: 5px;
+   background-color: #ffff;
+   border-radius: 15px;
+}
+
+.breakdiv h1{
+   font-weight: 400;
+   font-size: larger;
+
+}
+.breakdiv button {
+   border-radius: 15px;
+   background-color:#2D371F;
+   color:white;
+   padding:5px 20px;
+   text-align: center;
+}
+.breakheader{
+   color: black;
+   font-size: 2rem;
+   text-align: center;
+}
+
+.prodcont{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 50%;
+   margin: 0 auto;
+}
+
+ @media only screen and (max-width: 700px){
+
+   .menuimages{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap:15px;
+    }
+
+
+ }
