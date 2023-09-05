@@ -10,56 +10,61 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 
-module.exports = merge(common,{
-    mode: "production",
-    entry: "./src/index.js",
-    
-    output: {
-        filename: "[name]main.[contentHash].bundle.js",
-        path: path.resolve(__dirname, "dist")
-    },
-    optimization: {
-        minimizer: [
-          // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
-          // `...`,
-          new CssMinimizerPlugin(), new TerserPlugin(),
-          new HtmlWebpackPlugin({
+module.exports = merge(common, {
+   mode: "production",
+   entry: "./src/index.js",
+
+   output: {
+      filename: "[name]main.[contentHash].bundle.js",
+      path: path.resolve(__dirname, "dist"),
+   },
+   optimization: {
+      minimizer: [
+         // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+         // `...`,
+         new CssMinimizerPlugin(),
+         new TerserPlugin(),
+         new HtmlWebpackPlugin({
             template: "./src/template.html",
             minify: {
-                removeAttributeQuotes:true,
-                collapseWhitespace: true,
-                removeComments: true
-            }
-          })
-        ],
-      },
+               removeAttributeQuotes: true,
+               collapseWhitespace: true,
+               removeComments: true,
+            },
+         }),
+      ],
+   },
 
-    plugins: [ new MiniCssExtractPlugin({
-        filename: "[name].[contentHash].css"
-    }) ,new CleanWebpackPlugin(),
+   plugins: [
+      new MiniCssExtractPlugin({
+         filename: "[name].[contentHash].css",
+      }),
+      new CleanWebpackPlugin(),
+   ],
 
-    
+   module: {
+      rules: [
+         {
+            test: /\.css$/i,
+            include: [path.resolve(__dirname, "./src/index.css"), path.resolve(__dirname, "./src/style.css")],
+            use: [
+               MiniCssExtractPlugin.loader,
+               //extract css into files
+               "css-loader", //Turns css into commonJS
+               "sass-loader",
+            ], //coverts sass  into css
+         },
 
-],
-
-    module: {
-        rules:[
-
-            {
-                test: /\.css$/i,
-                include: [
-   path.resolve(__dirname, './src/index.css'),
-   path.resolve(__dirname, './src/style.css'),
-],
-                use: [
-                    MiniCssExtractPlugin.loader,
-                     //extract css into files
-                     "css-loader", //Turns css into commonJS
-                     "sass-loader"] //coverts sass  into css
-              },
-        ]
-    }
-    
-
-    
-})
+         {
+            test: /\.(?:js|mjs|cjs)$/,
+            exclude: /node_modules/,
+            use: {
+               loader: "babel-loader",
+               options: {
+                  presets: [["@babel/preset-env", { targets: "defaults" }]],
+               },
+            },
+         },
+      ],
+   },
+});
